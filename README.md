@@ -1,7 +1,7 @@
 # detic_ros
 
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.svg)](https://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
-![repo size](https://img.shields.io/github/repo-size/Osaka-University-Harada-Laboratory/detic_ros)
+![repo size](https://img.shields.io/github/repo-size/UOsaka-Harada-Laboratory/detic_ros)
 
 Docker environment for Detic ROS driver. This repository was inspired by [HiroIshida/detic_ros](https://github.com/HiroIshida/detic_ros).
 
@@ -21,7 +21,7 @@ Docker environment for Detic ROS driver. This repository was inspired by [HiroIs
 
 ## Installation
 ```bash
-sudo apt install graphicsmagick-imagemagick-compat byobu -y && git clone git@github.com:Osaka-University-Harada-Laboratory/detic_ros.git --recursive --depth 1 && cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel 
+sudo apt install graphicsmagick-imagemagick-compat byobu -y && git clone git@github.com:UOsaka-Harada-Laboratory/detic_ros.git --recursive --depth 1 && cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel 
 ```
 
 ## Usage
