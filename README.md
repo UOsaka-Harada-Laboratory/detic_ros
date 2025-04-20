@@ -13,10 +13,9 @@ Docker environment for Detic ROS driver. This repository was inspired by [HiroIs
 
 ## Docker build environment (tested)
 
-- [Ubuntu 20.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=20.04+LTS) (22.04 is not supported)
-  - [ROS Noetic (Python3)](https://wiki.ros.org/noetic/Installation/Ubuntu)
-  - Docker 20.10.22
-  - Docker Compose v2.4.1
+- [Ubuntu 22.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=22.04+LTS)
+  - Docker 27.4.1
+  - Docker Compose 2.32.1
   - nvidia-docker2 2.11.0-1
 
 ## Installation
