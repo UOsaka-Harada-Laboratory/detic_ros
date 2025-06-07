@@ -85,7 +85,6 @@ RUN python3 -m pip install -e .
 WORKDIR /catkin_ws/src/Detic
 RUN python3 -m pip install -r requirements.txt 
 RUN mkdir models && wget https://dl.fbaipublicfiles.com/detic/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth -O models/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth
-RUN wget https://web.eecs.umich.edu/~fouhey/fun/desk/desk.jpg
 
 # Generates bash commands
 WORKDIR /catkin_ws/src/
@@ -98,6 +97,6 @@ RUN echo "roslaunch detic_ros rsd435_bringup.launch imageView:=true" >> ~/.bash_
 RUN echo "rosrun image_view image_view image:=/docker/detic_segmentor/debug_image" >> ~/.bash_history
 RUN echo "rosrun image_view image_view image:=/docker/detic_segmentor/debug_segmentation_image _do_dynamic_scaling:=true" >> ~/.bash_history
 RUN echo "rostopic echo /docker/detic_segmentor/segmentation_info/detected_classes" >> ~/.bash_history
-RUN echo "python3 demo.py --config-file configs/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.yaml --input desk.jpg --output out.png --vocabulary lvis --opts MODEL.WEIGHTS models/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth" >> ~/.bash_history
+RUN echo "python3 demo.py --config-file configs/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.yaml --input X.jpg --output out.png --vocabulary lvis --opts MODEL.WEIGHTS models/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth" >> ~/.bash_history
 RUN echo "python3 demo.py --config-file configs/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.yaml --video-input out.mp4 --output out --vocabulary lvis --opts MODEL.WEIGHTS models/Detic_LCOCOI21k_CLIP_SwinB_896b32_4x_ft4x_max-size.pth" >> ~/.bash_history
 RUN echo "display out.png"
