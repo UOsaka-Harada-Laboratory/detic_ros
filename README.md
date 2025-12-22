@@ -20,7 +20,13 @@ Docker environment for Detic ROS driver. This repository was inspired by [HiroIs
 
 ## Installation
 ```bash
-sudo apt install graphicsmagick-imagemagick-compat byobu -y && git clone git@github.com:UOsaka-Harada-Laboratory/detic_ros.git --recursive --depth 1 && cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel 
+sudo apt install graphicsmagick-imagemagick-compat byobu -y
+```
+```bash
+git clone git@github.com:UOsaka-Harada-Laboratory/detic_ros.git --recursive --depth 1
+```
+```bash
+cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel 
 ```
 
 ## Usage
