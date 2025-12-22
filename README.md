@@ -14,6 +14,7 @@ Docker environment for Detic ROS driver. This repository was inspired by [HiroIs
 ## Docker build environment (tested)
 
 - [Ubuntu 22.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=22.04+LTS)
+  - NVIDIA GeForce RTX 3090
   - Docker 27.4.1
   - Docker Compose 2.32.1
   - nvidia-docker2 2.11.0-1
