@@ -20,7 +20,7 @@
             <arg name="in" value="$(arg input_image)"/>
         </include>
 
-        <node name="detic_segmentor" pkg="detic_ros" type="node.py" output="screen" >
+        <node name="detic_segmentor" pkg="detic_ros" type="detic_node.py" output="screen" >
             <remap from="~input_image" to="$(arg _input_image)"/>
             <param name="verbose" value="$(arg verbose)"/>
             <param name="enable_pubsub" value="$(arg enable_pubsub)"/>

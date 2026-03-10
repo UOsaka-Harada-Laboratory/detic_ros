@@ -32,6 +32,8 @@ cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compo
 
 ## Usage
 
+> **Note:** Before running any command that uses GUI (RViz, image_view), run `xhost +` on the host machine to allow X11 forwarding from Docker containers.
+
 1. Connect the camera device to the computer with a USB3.0 cable
 
 2. Execute the below command according to the sensing device connected
@@ -64,7 +66,7 @@ cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compo
   ```  
 
   ```bash
-  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros sample.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/resized_image_color"
+  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros detic_segmentor.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/resized_image_color"
   ```  
 
   ```bash
@@ -85,7 +87,7 @@ cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compo
   ```  
 
   ```bash
-  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros sample.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/camera/color/image_raw"
+  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros detic_segmentor.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/camera/color/image_raw"
   ```  
   ```bash
   xhost + && docker exec -it detic_2004_container bash -it -c "rosrun image_view image_view image:=/docker/detic_segmentor/debug_image"
@@ -100,12 +102,15 @@ cd detic_ros/docker && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compo
   ```
 
 #### USB camera
-  ```bash
-  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros usbcam_bringup.launch" 
-  ```  
+
+> **Note:** USB camera uses `/usb_cam/image_raw` as the image topic (vs `/camera/color/image_raw` for Azure Kinect and RealSense). This is determined by the `usb_cam` ROS driver's default namespace.
 
   ```bash
-  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros sample.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/usb_cam/image_raw"
+  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros usbcam_bringup.launch"
+  ```
+
+  ```bash
+  xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros detic_segmentor.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/usb_cam/image_raw"
   ```  
 
   ```bash

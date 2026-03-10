@@ -45,7 +45,7 @@ include_directories(
 catkin_install_python(PROGRAMS
                       scripts/client.py
                       scripts/masked_image_publisher.py
-                      scripts/wrapper.py
-                      scripts/node.py
+                      scripts/detic_wrapper.py
+                      scripts/detic_node.py
                       scripts/node_config.py
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

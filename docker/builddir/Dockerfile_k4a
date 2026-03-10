@@ -91,8 +91,7 @@ RUN cp /usr/lib/x86_64-linux-gnu/libk4a.so ./src/k4a/_libs/
 RUN cp /usr/lib/x86_64-linux-gnu/libk4a.so.1.4 ./src/k4a/_libs/
 RUN cp /usr/lib/x86_64-linux-gnu/libk4a.so.1.4.2 ./src/k4a/_libs/
 RUN cp /usr/lib/x86_64-linux-gnu/libk4a1.4/libdepthengine.so.2.0 ./src/k4a/_libs/
-ADD build_wheel_rev.csh .
-RUN /bin/bash -c 'source ./build_wheel_rev.csh'
+RUN pip3 install --upgrade pip && pip3 install -e . && pip3 install wheel && pip3 wheel . -w build
 RUN chmod +x examples/*
 RUN pip3 install --upgrade pip && pip3 install opencv-contrib-python open3d
 
@@ -102,7 +101,7 @@ RUN echo "k4aviewer" >> ~/.bash_history
 RUN echo "roslaunch detic_ros k4a_pcd_rviz.launch" >> ~/.bash_history
 RUN echo "roslaunch detic_ros k4a_bringup.launch imageView:=true" >> ~/.bash_history
 RUN echo "roslaunch detic_ros resize.launch" >> ~/.bash_history
-RUN echo "roslaunch detic_ros sample.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/resized_image_color" >> ~/.bash_history
+RUN echo "roslaunch detic_ros detic_segmentor.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/resized_image_color" >> ~/.bash_history
 RUN echo "rosrun rviz rviz -d /catkin_ws/src/detic_ros/config/k4a_demo_rviz.rviz" >> ~/.bash_history
 RUN echo "cd /catkin_ws/src/k4a/scripts" >> ~/.bash_history
 RUN echo "python3 /Azure-Kinect-Sensor-SDK/src/python/k4a/simple_viewer.py" >> ~/.bash_history

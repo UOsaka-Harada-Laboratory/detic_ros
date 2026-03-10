@@ -12,7 +12,7 @@ import sys
 sys.path.insert(0, '/catkin_ws/src/detic_ros/scripts')  # noqa: E402
 
 from node_config import NodeConfig
-from wrapper import DeticWrapper
+from detic_wrapper import DeticWrapper
 
 
 class DeticRosNode:

@@ -13,7 +13,7 @@ byobu send-keys -t 0 'xhost + && docker exec -it detic_1804_container bash -it -
 sleep 6.
 byobu send-keys -t 1 'xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros resize.launch"' 'C-m'
 sleep 2.
-byobu send-keys -t 2 'xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros sample.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/resized_image_color"' 'C-m'
+byobu send-keys -t 2 'xhost + && docker exec -it detic_2004_container bash -it -c "roslaunch detic_ros detic_segmentor.launch out_debug_img:=true out_debug_segimg:=false compressed:=false device:=auto input_image:=/resized_image_color"' 'C-m'
 sleep 8.
 byobu send-keys -t 3 'xhost + && docker exec -it detic_2004_container bash -it -c "rosrun rviz rviz -d /catkin_ws/src/detic_ros/config/k4a_demo_rviz.rviz"' 'C-m'
 sleep 1.
