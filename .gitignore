@@ -1,5 +1,5 @@
 __pycache__
-
+*.vscode
 catkin_ws/src/detic_ros/datasets
 catkin_ws/src/detic_ros/detic_configs
 catkin_ws/src/detic_ros/models
@@ -7,3 +7,5 @@ catkin_ws/src/detic_ros/scripts/detic
 catkin_ws/src/detic_ros/scripts/third_party
 catkin_ws/src/detic_ros/data/*
 !catkin_ws/src/detic_ros/data/snacks
+*.claude
+CLAUDE.md
